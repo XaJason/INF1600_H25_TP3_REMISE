@@ -42,7 +42,7 @@ _Z13mandelbrotSetRK7ComplexS1_i:        # mangling vous est fourni
     push 8(%ebp)
     call _ZNK7Complex7modulusEv
     add $4, %esp
-    
+
     fcomi %st(1), %st
     movl 16(%ebp), %eax
     jae end

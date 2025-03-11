@@ -5,7 +5,6 @@ Date: 16 mars 2025
 Version: 1.0
 Description: Implémentation du constructeur en assembleur de la classe Complex
 *** Attention, c'est une methode, donc le parametre this est implicite:
-
 */
 
 .data

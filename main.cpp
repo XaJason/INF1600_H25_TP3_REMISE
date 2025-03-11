@@ -39,6 +39,6 @@ int main() {
 
     /////////////////////////// PARTIE 3: AFFICHAGE ///////////////////////////
 
-    drawMandelbrot();  // Decommenter cet appel pour visualiser votre
+    // drawMandelbrot();  // Decommenter cet appel pour visualiser votre
     // fonction recursive!
 }

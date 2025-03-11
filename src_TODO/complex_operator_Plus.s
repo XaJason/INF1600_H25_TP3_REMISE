@@ -24,43 +24,43 @@ L'opérateur plus doit appeler un constructeur pour créer le nombre complexe r�
 
 _ZplRK7ComplexS1_:                  
      # Prologue : Sauvegarder EBP et sauvegarder %ebx et %edi sur la pile
-    push    %ebp                    
-    movl    %esp, %ebp               # Initialisation de la pile de la fonction
-    push    %ebx                     # Sauvegarder %ebx (callee-saved)
-    push    %edi                     # Sauvegarder %edi (callee-saved)
+     push    %ebp                    
+     movl    %esp, %ebp               # Initialisation de la pile de la fonction
+     push    %ebx                     # Sauvegarder %ebx (callee-saved)
+     push    %edi                     # Sauvegarder %edi (callee-saved)
 
-    push 12(%ebp)
-    call _ZNK7Complex8imagPartEv
-    add $4, %esp
+     push 12(%ebp)
+     call _ZNK7Complex8imagPartEv
+     add $4, %esp
 
-    push 16(%ebp)
-    call _ZNK7Complex8imagPartEv
-    add $4, %esp
+     push 16(%ebp)
+     call _ZNK7Complex8imagPartEv
+     add $4, %esp
 
-    faddp
-    subl $4, %esp
-    fstps (%esp)
-    
-    push 12(%ebp)
-    call _ZNK7Complex8realPartEv
-    add $4, %esp
+     faddp
+     subl $4, %esp
+     fstps (%esp)
 
-    push 16(%ebp)
-    call _ZNK7Complex8realPartEv
-    add $4, %esp
+     push 12(%ebp)
+     call _ZNK7Complex8realPartEv
+     add $4, %esp
 
-    faddp
+     push 16(%ebp)
+     call _ZNK7Complex8realPartEv
+     add $4, %esp
 
-    subl $4, %esp
-    fstps (%esp)
+     faddp
 
-    push 8(%ebp)
-    call _ZN7ComplexC1Eff
+     subl $4, %esp
+     fstps (%esp)
 
-    addl $12, %esp
+     push 8(%ebp)
+     call _ZN7ComplexC1Eff
+
+     addl $12, %esp
 
      # Épilogue : Restaurer les registres et revenir
-    popl    %edi                     # Restaurer %edi
-    popl    %ebx                     # Restaurer %ebx
-    leave                            # Restaurer %ebp et %esp
-    ret
+     popl    %edi                     # Restaurer %edi
+     popl    %ebx                     # Restaurer %ebx
+     leave                            # Restaurer %ebp et %esp
+     ret
