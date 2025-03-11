@@ -3,7 +3,7 @@ INF1600 - TP3 - Visualisation de la serie de Mandelbrot
 Matricules: Code fourni
 Date: 16 mars 2025
 Version: 1.0
-Description:
+Description: Implémentation de la méthode d'accès à la partie imaginaire en    assembleur de la classe Complex
 L'equivalent C++
 float Complex::imagPart() const {return this->imag;}
 

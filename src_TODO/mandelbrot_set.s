@@ -3,7 +3,7 @@ INF1600 - TP3 - Visualisation de la serie de Mandelbrot
 Matricules: 2348245, 2371915
 Date: 16 mars 2025
 Version: 1.0
-Description:
+Description: Implémentation en assembleur de la fonction récursive de la série de Mandelbrot
 
 Vous devrez utiliser la fonction 
 fisttpl qui prend le registre ST(0) de la pile FPU (valeur le plus récemment chargée) 

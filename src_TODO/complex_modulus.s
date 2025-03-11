@@ -3,7 +3,7 @@ INF1600 - TP3 - Visualisation de la serie de Mandelbrot
 Matricules: 2348245, 2371915
 Date: 16 mars 2025
 Version: 1.0
-Description:
+Description: Implémentation du calcul du module en assembleur de la classe Complex
 
 /* Attention, ici il faudra utiliser les instructions
 l'instruction faddp, fmulp et fsqrt (pour faire dea opérations sur

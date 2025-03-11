@@ -3,7 +3,7 @@ INF1600 - TP3 - Visualisation de la serie de Mandelbrot
 Matricules: 2348245, 2371915
 Date: 16 mars 2025
 Version: 1.0
-Description:
+Description: Implémentation de la surcharge de l'opérateur d'addition à deux paramètres en assembleur de la classe Complex
 
 
 */
