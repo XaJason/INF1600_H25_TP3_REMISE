@@ -28,9 +28,65 @@ _ZmlRK7ComplexS1_  :
     push    %ebx                     # Sauvegarder %ebx (callee-saved)
     push    %edi                     # Sauvegarder %edi (callee-saved)
 
-  # TODO
-  
-  
+    # Left Part
+    push 12(%ebp)
+    call _ZNK7Complex8realPartEv
+    add $4, %esp
+
+    push 16(%ebp)
+    call _ZNK7Complex8realPartEv
+    add $4, %esp
+
+    fmulp
+
+    push 12(%ebp)
+    call _ZNK7Complex8imagPartEv
+    add $4, %esp
+
+    push 16(%ebp)
+    call _ZNK7Complex8imagPartEv
+    add $4, %esp
+
+    fmulp
+
+    fsubrp
+
+
+    push 12(%ebp)
+    call _ZNK7Complex8realPartEv
+    add $4, %esp
+
+    push 16(%ebp)
+    call _ZNK7Complex8imagPartEv
+    add $4, %esp
+
+    fmulp
+
+    push 12(%ebp)
+    call _ZNK7Complex8imagPartEv
+    add $4, %esp
+
+    push 16(%ebp)
+    call _ZNK7Complex8realPartEv
+    add $4, %esp
+
+    fmulp
+
+    faddp
+
+
+    subl $4, %esp
+    fstps (%esp)
+
+    subl $4, %esp
+    fstps (%esp)
+
+    push 8(%ebp)
+    call _ZN7ComplexC1Eff
+
+    addl $12, %esp
+
+
 
     # epilogue
     popl    %edi                     # Restaurer %edi

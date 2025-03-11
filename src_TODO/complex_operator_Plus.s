@@ -59,7 +59,6 @@ _ZplRK7ComplexS1_:
     call _ZN7ComplexC1Eff
 
     addl $12, %esp
-    
 
      # Épilogue : Restaurer les registres et revenir
     popl    %edi                     # Restaurer %edi
