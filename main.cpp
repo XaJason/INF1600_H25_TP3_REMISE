@@ -35,7 +35,7 @@ int main() {
     Commenter/decommenter au besoin
     */
 
-    // runTests();
+    runTests();
 
     /////////////////////////// PARTIE 3: AFFICHAGE ///////////////////////////
 
