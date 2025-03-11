@@ -20,7 +20,7 @@ int main() {
     Ceci est pour tester l'installation de vos dependances
     */
 
-    drawInit();  // Commenter cet appel si le tout compile.
+    // drawInit();  // Commenter cet appel si le tout compile.
 
     ///////////////////////////    PARTIE 1: TODO    ///////////////////////////
     /*
@@ -39,6 +39,6 @@ int main() {
 
     /////////////////////////// PARTIE 3: AFFICHAGE ///////////////////////////
 
-    // drawMandelbrot(); // Decommenter cet appel pour visualiser votre fonction
-    // recursive!
+    drawMandelbrot();  // Decommenter cet appel pour visualiser votre
+    // fonction recursive!
 }
