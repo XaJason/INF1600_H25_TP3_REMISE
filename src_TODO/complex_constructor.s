@@ -1,7 +1,7 @@
 /*
 INF1600 - TP3 - Visualisation de la serie de Mandelbrot
-Matricules: 
-Date: 
+Matricules: 2348245, 2371915
+Date: 16 mars 2025
 Version: 1.0
 Description: 
 *** Attention, c'est une methode, donc le parametre this est implicite:
@@ -19,7 +19,12 @@ _ZN7ComplexC1Eff:
     push    %ebp
     movl    %esp, %ebp
 
-    # TODO
+    # construction
+    movl 8(%ebp), %eax
+    movl 12(%ebp), %ecx
+    movl 16(%ebp), %edx
+    movl %ecx, (%eax)
+    movl %edx, 4(%eax)
 
     #epilogue                   
     leave
