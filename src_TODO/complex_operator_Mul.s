@@ -28,7 +28,6 @@ _ZmlRK7ComplexS1_  :
     push    %ebx                     # Sauvegarder %ebx (callee-saved)
     push    %edi                     # Sauvegarder %edi (callee-saved)
 
-    # Left Part
     push 12(%ebp)
     call _ZNK7Complex8realPartEv
     add $4, %esp
@@ -85,8 +84,6 @@ _ZmlRK7ComplexS1_  :
     call _ZN7ComplexC1Eff
 
     addl $12, %esp
-
-
 
     # epilogue
     popl    %edi                     # Restaurer %edi

@@ -29,7 +29,6 @@ _ZplRK7ComplexS1_:
     push    %ebx                     # Sauvegarder %ebx (callee-saved)
     push    %edi                     # Sauvegarder %edi (callee-saved)
 
-    # Addition
     push 12(%ebp)
     call _ZNK7Complex8imagPartEv
     add $4, %esp

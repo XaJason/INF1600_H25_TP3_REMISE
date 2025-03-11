@@ -19,7 +19,6 @@ _ZN7ComplexC1Eff:
     push    %ebp
     movl    %esp, %ebp
 
-    # construction
     movl 8(%ebp), %eax
     movl 12(%ebp), %ecx
     movl 16(%ebp), %edx

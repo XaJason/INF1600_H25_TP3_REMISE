@@ -21,7 +21,23 @@ _ZNK7Complex7modulusEv:
     push    %ebp
     movl    %esp, %ebp
 
-    # TODO
+    push 8(%ebp)
+    call _ZNK7Complex8realPartEv
+    call _ZNK7Complex8realPartEv
+    add $4, %esp
+
+    fmulp
+
+    push 8(%ebp)
+    call _ZNK7Complex8imagPartEv
+    call _ZNK7Complex8imagPartEv
+    add $4, %esp
+
+    fmulp
+
+    faddp
+
+    fsqrt
 
     # epilogue
     leave
