@@ -36,25 +36,25 @@ _Z13mandelbrotSetRK7ComplexS1_i:        # mangling vous est fourni
     push    %ebp
     movl    %esp, %ebp
 
+    movl 16(%ebp), %ecx
+
     # cas de base 1
     flds escapeRadiusFloat
-
     push 8(%ebp)
     call _ZNK7Complex7modulusEv
     add $4, %esp
-
-    fcomi %st(1), %st
-    movl 16(%ebp), %eax
-    jae end
+    fcomip %st(1), %st
+    jae case
 
     # cas de base 2
-    movl %eax, %ecx
-    incl %ecx
     cmpl maxIterations, %ecx
-    ja end
+    jae case
+
+    
 
     # cas recursif
-    push %ecx
+    incl %ecx
+    pushl %ecx
     push 12(%ebp)
 
     push 8(%ebp)
@@ -69,8 +69,11 @@ _Z13mandelbrotSetRK7ComplexS1_i:        # mangling vous est fourni
 
     push %eax
     call _Z13mandelbrotSetRK7ComplexS1_i
-    add $4, %esp
+    add $12, %esp
+    jmp end
 
+    case:
+    movl %ecx, %eax
     end:
     # epilogue
     leave
