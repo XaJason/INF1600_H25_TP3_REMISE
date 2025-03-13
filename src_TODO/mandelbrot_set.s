@@ -37,11 +37,7 @@ start:
     push    %ebp
     movl    %esp, %ebp
 
-    movl 16(%ebp), %ecx
-
-    # cas de base 2
-    cmpl maxIterations, %ecx
-    jae case
+    movl 16(%ebp), %ebx
 
     # cas de base 1
     push 8(%ebp)
@@ -53,30 +49,41 @@ start:
     cmpl escapeRadiusInt, %eax
     jae case
 
-    
+    # cas de base 2
+    cmpl maxIterations, %ebx
+    jae case
 
     # cas recursif
-    incl %ecx
-    pushl %ecx
-    push 12(%ebp)
+    incl %ebx
+    pushl %ebx
+
+    subl $8, %esp
+    movl %esp, %edi
 
     push 8(%ebp)
     push 8(%ebp)
+    push %edi
     call _ZmlRK7ComplexS1_
-    add $8, %esp
-
-    push %eax
-    push 12(%ebp)
-    call _ZplRK7ComplexS1_
-    add $8, %esp
-
-    push %eax
-    call _Z13mandelbrotSetRK7ComplexS1_i
     add $12, %esp
+
+    subl $8, %esp
+    movl %esp, %esi
+
+    push 12(%ebp)
+    pushl %edi
+    pushl %esi
+    call _ZplRK7ComplexS1_
+    add $12, %esp
+
+    pushl %ebx
+    push 12(%ebp)
+    push %esi
+    call _Z13mandelbrotSetRK7ComplexS1_i
+    add $28, %esp
     jmp end
 
     case:
-    movl %ecx, %eax
+    movl %ebx, %eax
     end:
     # epilogue
     leave
