@@ -45,7 +45,6 @@ start:
     fisttpl (%esp)
     movl (%esp), %eax
     add $4, %esp
-
     cmpl escapeRadiusInt, %eax
     jae case
 
@@ -57,18 +56,16 @@ start:
     incl %ebx
     pushl %ebx
 
-    subl $8, %esp
+    subl $4, %esp
     movl %esp, %edi
-
     push 8(%ebp)
     push 8(%ebp)
     push %edi
     call _ZmlRK7ComplexS1_
     add $12, %esp
 
-    subl $8, %esp
+    subl $4, %esp
     movl %esp, %esi
-
     push 12(%ebp)
     pushl %edi
     pushl %esi
@@ -79,12 +76,14 @@ start:
     push 12(%ebp)
     push %esi
     call _Z13mandelbrotSetRK7ComplexS1_i
-    add $28, %esp
+    add $12, %esp
     jmp end
 
     case:
     movl %ebx, %eax
+
     end:
+
     # epilogue
     leave
     ret
