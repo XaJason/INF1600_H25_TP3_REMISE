@@ -37,6 +37,10 @@ start:
     push    %ebp
     movl    %esp, %ebp
 
+    pushl %ebx
+    pushl %edi
+    pushl %esi
+
     movl 16(%ebp), %ebx
 
     # cas de base 1
@@ -46,15 +50,14 @@ start:
     movl (%esp), %eax
     add $4, %esp
     cmpl escapeRadiusInt, %eax
-    jae case
+    jae finCasBase
 
     # cas de base 2
     cmpl maxIterations, %ebx
-    jae case
+    jae finCasBase
 
     # cas recursif
     incl %ebx
-    pushl %ebx
 
     subl $4, %esp
     movl %esp, %edi
@@ -77,12 +80,15 @@ start:
     push %esi
     call _Z13mandelbrotSetRK7ComplexS1_i
     add $12, %esp
-    jmp end
+    jmp fin
 
-    case:
+    finCasBase:
     movl %ebx, %eax
 
-    end:
+    fin:
+    popl %esi
+    popl %edi
+    popl %ebx
 
     # epilogue
     leave
